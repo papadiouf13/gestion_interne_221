@@ -1,0 +1,138 @@
+<header
+  class="fixed top-0 bg-white dark:bg-gray-800 shadow-md p-2 flex items-center justify-between z-10"
+  [class.expanded]="isSidebarExpanded"
+  [class.collapsed]="!isSidebarExpanded"
+>
+  <button (click)="onToggleSidebar()" class="text-gray-500 dark:text-white focus:outline-none">
+    <span class="material-symbols-outlined" id="menuIcon">menu</span>
+  </button>
+
+  <div class="relative w-full max-w-md">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="w-full pl-8 p-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded-full focus:outline-beige"
+    />
+    <span class="absolute left-0 top-0 mt-2 text-gray-500 dark:text-gray-400">
+      <span class="material-symbols-outlined">search</span>
+    </span>
+  </div>
+
+  <div class="flex items-center space-x-6">
+    <app-select-personnalise
+      [options]="anneeScolaire"
+      placeholder="Choisir année scolaire"
+      iconClass="fas fa-calendar-days text-beige"
+    ></app-select-personnalise>
+
+    <div>
+      <button type="button" class="group relative block" (click)="toggleDrawer()">
+        <img
+          class="h-9 w-9 rounded-full object-cover saturate-50 group-hover:saturate-100"
+          src="https://via.placeholder.com/150"
+          alt="Profile Picture"
+        />
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer Profile-->
+<div
+  class="drawer fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 shadow-lg z-20 transform transition-transform duration-300"
+  [class.translate-x-full]="!isDrawerOpen"
+  (clickOutside)="closeDrawer()"
+>
+  <div class="drawer-content h-full overflow-y-auto p-6">
+    <!-- Profile Section -->
+    <div class="text-center mb-8">
+      <div class="relative inline-block">
+        <img
+          class="h-24 w-24 rounded-full object-cover mx-auto"
+          src="https://via.placeholder.com/150"
+          alt="Profile Picture"
+        />
+        <span class="absolute top-0 right-0 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Pro</span>
+      </div>
+      <h2 class="text-xl font-semibold mt-4 dark:text-white">Username</h2>
+      <p class="text-gray-500 dark:text-gray-400">Admin</p>
+      <p class="text-sm mt-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue bibendum pellentesque mauris, nibh senectus.
+      </p>
+    </div>
+
+    <!-- My Folders Section -->
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-semibold dark:text-white">My folders</h3>
+        <div class="flex space-x-4">
+          <button class="text-gray-500 dark:text-gray-400">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+          <button class="text-gray-500 dark:text-gray-400">
+            <span class="material-symbols-outlined">filter_list</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="p-2 bg-blue-100 rounded-md text-center">
+          <span class="material-symbols-outlined text-blue-500">folder</span>
+          <p class="text-sm font-semibold mt-2">Mobile apps</p>
+          <p class="text-xs text-gray-500">December 20, 2020</p>
+        </div>
+        <div class="p-2 bg-yellow-100 rounded-md text-center">
+          <span class="material-symbols-outlined text-yellow-500">folder</span>
+          <p class="text-sm font-semibold mt-2">SVG icons</p>
+          <p class="text-xs text-gray-500">December 14, 2020</p>
+        </div>
+        <div class="p-2 bg-red-100 rounded-md text-center">
+          <span class="material-symbols-outlined text-red-500">folder</span>
+          <p class="text-sm font-semibold mt-2">Prototypes</p>
+          <p class="text-xs text-gray-500">November 20, 2020</p>
+        </div>
+        <div class="p-2 bg-teal-100 rounded-md text-center">
+          <span class="material-symbols-outlined text-teal-500">folder</span>
+          <p class="text-sm font-semibold mt-2">Avatars</p>
+          <p class="text-xs text-gray-500">November 20, 2020</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Uploads Section -->
+    <div class="mt-8">
+      <h3 class="text-lg font-semibold dark:text-white">Recent uploads</h3>
+      <div class="mt-4 flex items-center justify-between">
+        <div class="flex items-center">
+          <img
+            src="https://via.placeholder.com/30"
+            alt="Document Icon"
+            class="h-8 w-8 mr-2"
+          />
+          <div>
+            <p class="text-sm font-semibold dark:text-white">Project.docx</p>
+            <p class="text-xs text-gray-500">July 22, 2024</p>
+          </div>
+        </div>
+        <span class="text-gray-500 text-sm dark:text-gray-400">300kb</span>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="mt-12 text-center">
+      <img
+        src="assets/images/ecole221.png"
+        alt="School Logo"
+        class="h-16 mx-auto"
+      />
+    </div>
+  </div>
+</div>
+
+<!--End Drawer Profile-->
+
+<div
+  *ngIf="isDrawerOpen"
+  class="fixed inset-0 bg-black bg-opacity-50 z-10"
+  (click)="closeDrawer()"
+></div>

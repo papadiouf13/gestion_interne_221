@@ -1,0 +1,94 @@
+<div class="mt-12">
+  <div class="bg-white p-3 shadow-lg">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold text-red-600">Liste des étudiants <span class="text-yellow-600">(142)</span></h1>
+      <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Inscription / Réinscription</button>
+    </div>
+
+    <!-- Boutons -->
+    <div class="flex space-x-4 mb-4">
+      <button class="bg-black text-white px-4 py-2 rounded-md flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        Télécharger le fichier model
+      </button>
+      <button class="bg-black text-white px-4 py-2 rounded-md flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        Importer le fichier
+      </button>
+    </div>
+
+    <!-- Filtres -->
+    <div class="flex space-x-4 mb-4 items-center">
+      <select class="border border-gray-300 rounded-md px-4 py-2 bg-white">
+      <option>Filtre par classe</option>
+      <option>Dev Web/Mobile</option>
+      </select>
+
+      <select class="border border-gray-300 rounded-md px-4 py-2 bg-white">
+      <option>Statut</option>
+      <option>Actif</option>
+      <option>Inactif</option>
+      </select>
+
+      <div class="flex-grow"></div>
+
+      <input
+      type="text"
+      placeholder="Rechercher..."
+      class="border border-gray-300 rounded-md px-4 py-2 w-full max-w-xs"
+      />
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+      <table class="min-w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-100 border-b">
+            <th class="py-3 px-4">Photo</th>
+            <th class="py-3 px-4">Matricule</th>
+            <th class="py-3 px-4">Nom Complet</th>
+            <th class="py-3 px-4">Adresse</th>
+            <th class="py-3 px-4">Téléphone</th>
+            <th class="py-3 px-4">Classe</th>
+            <th class="py-3 px-4">Statut</th>
+            <th class="py-3 px-4">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exemple de ligne -->
+          <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-4">
+              <img src="https://via.placeholder.com/150" alt="Photo" class="w-10 h-10 rounded-full">
+            </td>
+            <td class="py-3 px-4">1058215</td>
+            <td class="py-3 px-4">Seydina Mouhammad Diop</td>
+            <td class="py-3 px-4">Sicap Liberté 6 villa 6059 Dakar, Sénégal</td>
+            <td class="py-3 px-4">785993546</td>
+            <td class="py-3 px-4">Dev_Web/Mobile</td>
+            <td class="py-3 px-4">
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Actif</span>
+            </td>
+            <td class="py-3 px-4">
+              <button class="text-red-500 hover:text-red-700"><i class="fa-solid fa-ellipsis"></i></button>
+            </td>
+          </tr>
+          <!-- Répétez les lignes ci-dessus -->
+        </tbody>
+      </table>
+    </div>
+
+
+    <app-pagination
+    [totalItems]="10"
+    [itemsPerPageOptions]="[3, 5, 10]"
+    (pageChange)="onPageChange($event)"
+    (itemsPerPageChange)="onItemsPerPageChange($event)">
+  </app-pagination>
+  </div>
+
+</div>

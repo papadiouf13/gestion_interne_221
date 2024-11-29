@@ -1,0 +1,59 @@
+<app-domaine-specialite></app-domaine-specialite>
+<div class="bg-gray-50 p-3 rounded-md">
+  <div class="flex mt-3 bg-white shadow-lg p-3">
+      <div class="flex">
+        <app-select-personnalise [options]="domaine" placeholder="Choisir le domaine"  ></app-select-personnalise>
+          <input type="text" placeholder="mention" class="p-1 border border-gray-300 rounded-md focus:outline-beige shadow-md w-64 ml-2" />
+          <button class="bg-rouge text-white px-3 py-1 rounded-md ml-4">Créer</button>
+      </div>
+  </div>
+
+
+  <div class="overflow-x-auto mt-2">
+      <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+              <tr>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">Domaine</th>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">Mention</th>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">État</th>
+                  <th class="text-center py-3 px-2 text-red-600 text-sm">Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="border-b hover:bg-gray-100 transition duration-150">
+                  <td class="p-2 text-sm">Sciences et technologie</td>
+                  <td class="p-2 text-sm">Informatique</td>
+                  <td class="p-2 text-sm">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+                          Actif
+                      </span>
+                  </td>
+                  <td class="p-2 text-center">
+                      <i class="fa-solid fa-ellipsis text-rouge cursor-pointer"></i>
+                  </td>
+              </tr>
+              <tr class="border-b hover:bg-gray-100 transition duration-150">
+                <td class="p-2 text-sm">Sciences et technologie</td>
+                <td class="p-2 text-sm">Informatique</td>
+                <td class="p-2 text-sm">
+                    <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+                        Actif
+                    </span>
+                </td>
+                <td class="p-2 text-center">
+                    <i class="fa-solid fa-ellipsis text-rouge cursor-pointer"></i>
+                </td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+  <!-- Pagination -->
+  <app-pagination
+  [totalItems]="10"
+  [itemsPerPageOptions]="[3, 5, 10]"
+  (pageChange)="onPageChange($event)"
+  (itemsPerPageChange)="onItemsPerPageChange($event)">
+</app-pagination>
+</div>

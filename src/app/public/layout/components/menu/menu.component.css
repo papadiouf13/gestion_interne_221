@@ -1,0 +1,12 @@
+/* Styles pour le contenu principal */
+#content {
+  transition: margin-left 0.3s ease;
+}
+
+#content.content-expanded {
+  margin-left: 250px; 
+}
+
+#content.content-collapsed {
+  margin-left: 80px; /* Largeur du sidebar fermé */
+}

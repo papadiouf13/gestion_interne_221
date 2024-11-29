@@ -1,0 +1,45 @@
+<app-ressources></app-ressources>
+<div class="flex mt-3 space-x-1 w-full bg-white shadow-lg">
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/domaine']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/domaine')}">
+      Domaine
+  </button>
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/specialite']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ressources/domaineSpecialite/specialite')}">
+      Spécialité
+  </button>
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/cycle']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ressources/domaineSpecialite/cycle')}">
+      Cycle
+  </button>
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/niveau']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ressources/domaineSpecialite/niveau')}">
+      Niveau
+  </button>
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/mention']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ressources/domaineSpecialite/mention')}">
+      Mention
+  </button>
+  <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/domaineSpecialite/semestre']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ressources/domaineSpecialite/semestre')}">
+      Semestre
+  </button>
+</div>

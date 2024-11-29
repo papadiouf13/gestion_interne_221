@@ -1,0 +1,32 @@
+.sidebar-expanded {
+  width: 250px;
+}
+
+.sidebar-collapsed {
+  width: 62px;
+}
+/* .sidebar-collapsed-i {
+  text-align: center;
+  padding: auto;
+} */
+.menu-text {
+  white-space: nowrap;
+}
+
+.sidebar-collapsed .menu-text {
+  display: none;
+}
+
+
+  .sidebar-collapsed .menu-text {
+    display: none;
+  }
+
+  .sidebar-collapsed .menu-item:hover .menu-text {
+    display: inline;
+    position: absolute;
+    left: 50px;
+    background-color: #C9151B;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }

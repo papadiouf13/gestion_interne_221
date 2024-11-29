@@ -1,0 +1,128 @@
+<app-detail-etudiant></app-detail-etudiant>
+<div class="w-5/6 bg-white relative p-2 ml-56 h-96 overflow-y-scroll custom-scrollbar">
+  <div class="max-w-screen-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+    <!-- Identification Section -->
+    <div class="border-b-2 pb-4 mb-6">
+      <h2 class="text-lg text-center font-bold text-red-600 uppercase mb-4">Identification</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Prénom</label>
+          <input type="text" value="Ndiaga" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Date de naissance</label>
+          <input type="date" value="2000-12-11" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Genre</label>
+          <input type="text" value="Masculin" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Nom</label>
+          <input type="text" value="Lo" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Lieu de naissance</label>
+          <input type="text" value="Parcelles Assainies" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Orphelin</label>
+          <input type="text" value="Néant" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Existance de l'extrait</label>
+          <div class="flex items-center mt-2">
+            <label class="flex items-center mr-4">
+              <input type="radio" name="extrait" checked class="text-red-500 focus:ring-red-500" />
+              <span class="ml-2 text-sm text-gray-700">Oui</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="extrait" class="text-red-500 focus:ring-red-500" />
+              <span class="ml-2 text-sm text-gray-700">Non</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Numéro de l'extrait</label>
+          <input type="text" value="1212" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Date/année de l'extrait</label>
+          <input type="date" value="NULL" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Autres Informations Section -->
+    <div>
+      <h2 class="text-lg text-center font-bold text-red-600 uppercase mb-4">Autres Informations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" value="sohnhero2024@gmail.com" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+          <input type="text" value="+221784559930" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Établissement précédent</label>
+          <input type="text" value="Université Gaston berger UGB" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Exemption EPS</label>
+          <div class="flex items-center mt-2">
+            <label class="flex items-center mr-4">
+              <input type="radio" name="exemption" checked class="text-red-500 focus:ring-red-500" />
+              <span class="ml-2 text-sm text-gray-700">Oui</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="exemption" class="text-red-500 focus:ring-red-500" />
+              <span class="ml-2 text-sm text-gray-700">Non</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Handicap</label>
+          <input type="text" value="Néant" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label for="groupe-sanguin" class="block text-sm font-medium text-gray-700">Groupe sanguin</label>
+          <select id="groupe-sanguin" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
+            <option>O+</option>
+            <option>A+</option>
+            <option>B+</option>
+            <option>AB+</option>
+            <option>O-</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Dernière classe redoublée</label>
+          <input type="text" value="Néant" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Année de redoublement</label>
+          <input type="text" value="Néant" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Status</label>
+          <input type="text" value="Passant" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Métier</label>
+          <input type="text" value="" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Ambition</label>
+          <input type="text" value="" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" />
+        </div>
+        <div class="col-span-1 sm:col-span-2 lg:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Autres renseignements</label>
+          <textarea class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

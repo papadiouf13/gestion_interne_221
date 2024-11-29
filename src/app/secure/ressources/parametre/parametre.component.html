@@ -1,0 +1,38 @@
+<app-ressources></app-ressources>
+<div class="flex mt-3 space-x-1 w-full bg-white shadow-lg">
+  <button
+      class="p-2 text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/parametre/evenement']"
+      routerLinkActive="bg-rouge text-white border-beige"
+      [ngClass]="{'text-white border-beige': isActive('/domaine')}">
+      Evenement
+  </button>
+  <button
+      class="p-2 text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/parametre/civilite']"
+      routerLinkActive="bg-rouge text-white border-beige"
+      [ngClass]="{'text-white border-beige': isActive('/ressources/domaineSpecialite/specialite')}">
+      Civilite
+  </button>
+  <button
+      class="p-2 text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/parametre/salles']"
+      routerLinkActive="bg-rouge text-white border-beige"
+      [ngClass]="{'text-white border-beige': isActive('/ressources/domaineSpecialite/cycle')}">
+      Salles
+  </button>
+  <button
+      class="p-2 text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/parametre/documents']"
+      routerLinkActive="bg-rouge text-white border-beige"
+      [ngClass]="{'text-white border-beige': isActive('/ressources/domaineSpecialite/niveau')}">
+      Documents
+  </button>
+  <button
+      class="p-2 text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/ressources/parametre/horaire']"
+      routerLinkActive="bg-rouge text-white border-beige"
+      [ngClass]="{'text-white border-beige': isActive('/ressources/domaineSpecialite/mention')}">
+      Horaires
+  </button>
+</div>

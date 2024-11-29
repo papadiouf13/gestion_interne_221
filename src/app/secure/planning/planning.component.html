@@ -1,0 +1,167 @@
+<main class="p-3 transition-all duration-300 bg-gray-100 mt-5">
+    <div class="container mx-auto mt-6">
+        <!-- Header Section -->
+        <div class="flex w-full">
+            <h1 class="text-2xl font-bold text-red-600 mb-6 w-5/6">Gestion Planning</h1>
+        </div>
+
+        <!-- Information Section -->
+        <div class="bg-white rounded-xl p-2  shadow-md flex justify-around items-center">
+            <div class="w-52 p-1">
+                <select class="form-select h-9 w-full p-1 border-gray-300 rounded-md shadow-md">
+                    <option>Filtrer par classes</option>
+                </select>
+            </div>
+
+            <div class="w-52 p-1">
+                <select class="form-select h-9 w-full p-1 border-gray-300 rounded-md shadow-md">
+                    <option>Filtrer par module</option>
+                </select>
+            </div>
+
+            <div class="flex space-x-1 p-1 rounded-md shadow-md w-2/3">
+                <button class="text-yellow-500 text-sm py-2 px-4 rounded-md">Filtre par Statut Sessions</button>
+                <button class="text-green-700 font-semibold bg-green-100 text-sm py-1 px-4 rounded-md">En cours</button>
+                <button class="text-yellow-700 font-semibold bg-yellow-100 text-sm py-1 px-4 rounded-md">
+                    <span class="material-symbols-outlined text-sm">select_check_box</span> Planifié
+                </button>
+                <button
+                    class="text-red-700 font-semibold bg-red-100 text-sm py-1 px-4 rounded-md flex items-center justify-around">
+                    <span
+                        class="material-symbols-outlined font-extrabold text-sm text-black">check_box_outline_blank</span>
+                    Terminé
+                </button>
+                <button
+                    class="text-red-100 font-semibold bg-red-800 text-sm py-1 px-4 rounded-md flex items-center justify-around">
+                    <span
+                        class="material-symbols-outlined font-extrabold text-sm text-red-100">check_box_outline_blank</span>
+                    Annuler
+                </button>
+                <button
+                    class="text-white font-semibold bg-gray-500 text-sm py-1 px-4 rounded-md flex justify-around items-center">
+                    <span class="material-symbols-outlined font-extrabold text-sm">select_check_box</span> All
+                </button>
+            </div>
+
+            <div class="p-1">
+                <button class="text-white bg-black font-semibold py-3 px-12 rounded-md flex justify-around">
+                    Télécharger
+                    <span class="material-symbols-outlined">sim_card_download</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4 mt-2 bg-white border shadow-lg rounded-3xl">
+        <!-- Header -->
+        <div class="flex justify-between items-center bg-white p-3 font-semibold">
+            <div class="flex items-center space-x-3">
+                <label for="start-time" class="text-sm">De:</label>
+                <select id="start-time" class="border rounded p-1 text-sm bg-gray-100">
+                    <option>08:00</option>
+                    <option>09:00</option>
+                </select>
+                <label for="end-time" class="text-sm">À:</label>
+                <select id="end-time" class="border rounded p-1 text-sm bg-gray-100">
+                    <option>10:00</option>
+                </select>
+            </div>
+            <div class="flex space-x-2 bg-gray-100 p-2 rounded-lg font-bold">
+                <button class="text-sm px-4 py-2 rounded-lg">Mois</button>
+                <button class="bg-white text-sm px-4 py-2 rounded">Semaine</button>
+                <button class="text-sm px-4 py-2 rounded-md">Jour</button>
+            </div>
+            <div class="flex space-x-2 font-bold">
+                <button class="bg-gray-200 px-2 py-1 rounded-lg">
+                    <svg class="w-4 h-4 text-black dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m15 19-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="bg-gray-200 2 text-sm px-4 py-1 rounded-lg">Aujourd'hui</button>
+                <button class="bg-gray-200 px-2 py-1 rounded-lg">
+                    <svg class="w-4 h-4 text-black dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m9 5 7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Days of the Week -->
+        <div class="flex justify-around mt-4 text-center font-bold">
+            <div class="p-2 w-19 bg-gray-100 flex justify-center items-center px-4 rounded-lg">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
+                </svg>
+            </div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Lundi <br /> <span class="font-bold text-xl">30</span></div>
+            <div class="p-2 w-40 bg-red-500 text-white rounded-lg">Mardi <br /> <span
+                    class="font-bold text-xl">01</span></div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Mercredi <br /> <span class="font-bold text-xl">02</span></div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Jeudi <br /> <span class="font-bold text-xl">03</span></div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Vendredi <br /> <span class="font-bold text-xl">04</span></div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Samedi <br /> <span class="font-bold text-xl">05</span></div>
+            <div class="p-2 w-40 bg-gray-100 rounded-lg">Dimanche <br /> <span class="font-bold text-xl">06</span></div>
+        </div>
+
+        <!-- Calendar Content -->
+        <div class="mt-2 text-sm bg-gray-100">
+            <!-- First Column (Lundi) -->
+            <div class="flex flex-wrap justify-around bg-white py-2">
+                <div class="w-19 p-2 text-black rounded-lg shadow-sm px-2 bg-green-100">
+                    <span class="font-semibold">08:00</span><br />
+                </div>
+
+                <div class="flex flex-wrap justify-around bg-green-100 px-1 py-2 Calendar" style="width: 94.9%;">
+                    <div class="bg-green-500 p-2 text-white rounded-lg shadow-sm w-40">
+                        <div class="w-full font-extrabold" style="width: 100%;">Algorithme & programmation</div>
+                        <span>08:00 à 12:00</span>
+                        <div class="w-full flex" style="width: 100%;">
+                            <img class="w-6 h-6 rounded-full shadow-lg border-2"
+                                src="https://plus.unsplash.com/premium_photo-1674248776543-ffa661a3544a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHVucGx1Z2dlZHxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="" />
+                            <div style="width: 80%;">Baila Wane</div>
+                        </div>
+                        <div class="flex flex-wrap justify-around mt-1" style="width: 100%;">
+                            <div class="bg-blue-50 text-black text-blue-800 flex rounded-lg justify-center"
+                                style="width: 100%;">
+                                <svg class="w-6 h-6 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
+                                </svg>
+                                Cours Presentiel
+                            </div>
+                            <div class="bg-white text-black mt-1 flex rounded-lg justify-center" style="width: 100%;">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                        d="M3 21h18M4 18h16M6 10v8m4-8v8m4-8v8m4-8v8M4 9.5v-.955a1 1 0 0 1 .458-.84l7-4.52a1 1 0 0 1 1.084 0l7 4.52a1 1 0 0 1 .458.84V9.5a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5Z" />
+                                </svg>
+                                Salle 5
+                            </div>
+                        </div>
+                        <div class="bg-white text-black mt-1 py-2 text-center rounded-lg" style="width: 50%;">L1 GRH
+                        </div>
+                        <span class="w-full flex justify-end">
+                            <svg class="w-5 h-5 text-blue-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

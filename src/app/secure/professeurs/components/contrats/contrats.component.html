@@ -1,0 +1,103 @@
+<app-professeurs></app-professeurs>
+<div class="p-3 space-y-2 bg-white">
+  <!-- Contract Type Selection -->
+  <div class="flex space-x-4">
+    <span class="p-2">Type de contrat : </span>
+    <button class="bg-red-600 text-white py-2 px-4 rounded-lg focus:outline-none">Contrat Permanent</button>
+    <button class="bg-white text-gray-700 border border-gray-300 py-2 px-4 rounded-lg focus:outline-none">Contrat Vacataire</button>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="flex items-center space-x-4">
+    <input type="text" placeholder="Du" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <input type="text" placeholder="Au" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <input type="text" placeholder="Nombre d’heures / semaine" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <input type="text" placeholder="Net à percevoir" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <button class="bg-red-600 text-white py-2 px-6 rounded-lg">Valider</button>
+
+  </div>
+
+  <!-- Module Status Filter -->
+  <div class="flex items-center space-x-2">
+    <select class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option>Filtrer par classe</option>
+    </select>
+    <select class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option>Filtrer par module</option>
+    </select>
+    <select class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option>Semestre</option>
+    </select>
+    <button class="bg-white text-yellow-400 border border-yellow-400 py-1 px-4 rounded-lg hover:bg-yellow-200 hover:text-yellow-600">Planifié</button>
+    <button class="bg-white text-green-400 border border-green-400 py-1 px-4 rounded-lg hover:bg-green-200 hover:text-green-600">En cours</button>
+    <button class="bg-white text-rouge border border-rouge py-1 px-4 rounded-lg hover:bg-rouge hover:text-white">Terminer</button>
+    <button class="bg-white text-gray-700 border border-gray-700 py-1 px-4 rounded-lg hover:bg-gray-700 hover:text-white">All</button>
+    <button class="bg-white text-black border border-black py-2 px-6 rounded-lg hover:bg-black hover:text-white">Télécharger le contrat <i class="fa-solid fa-download"></i></button>
+  </div>
+
+  <!-- Data Table -->
+  <div class="overflow-x-auto mt-4">
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr class="bg-gray-100 border-b border-gray-300">
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge">Classe (sous-classe)</th>
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge">Module</th>
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge">Semestre</th>
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge">Taux horaire</th>
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge">Status</th>
+          <th class="py-2 px-4 text-left border border-gray-300 text-rouge" colspan="3">Nbre d’heures</th>
+        </tr>
+        <tr class="bg-gray-100 border-b border-gray-300">
+          <th class="py-2 px-4 text-left"></th>
+          <th class="py-2 px-4 text-left"></th>
+          <th class="py-2 px-4 text-left"></th>
+          <th class="py-2 px-4 text-left"></th>
+          <th class="py-2 px-4 text-left"></th>
+          <th class="py-2 px-4 text-left border border-gray-300">VHG</th>
+          <th class="py-2 px-4 text-left border border-gray-300">VHE</th>
+          <th class="py-2 px-4 text-left border border-gray-300">VHR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-gray-300">
+          <td class="py-2 px-4 border border-gray-300" rowspan="3">Licence 1 Développement Web/Mobile</td>
+          <td class="py-2 px-4 border border-gray-300">Algorithme</td>
+          <td class="py-2 px-4 border border-gray-300">Semestre 1</td>
+          <td class="py-2 px-4 border border-gray-300">10 000 F</td>
+          <td class="py-2 px-4 border border-gray-300"><button class="bg-green-200 text-green-600 p-1 rounded-md">En cours</button></td>
+          <td class="py-2 px-4 border border-gray-300">48</td>
+          <td class="py-2 px-4 border border-gray-300">32</td>
+          <td class="py-2 px-4 border border-gray-300">80</td>
+        </tr>
+        <tr class="border-b border-gray-300">
+          <td class="py-2 px-4 border border-gray-300">Java</td>
+          <td class="py-2 px-4 border border-gray-300">Semestre 1</td>
+          <td class="py-2 px-4 border border-gray-300">10 000 F</td>
+          <td class="py-2 px-4 border border-gray-300 text-yellow-600"><button class="bg-yellow-200 text-yellow-600 p-1 rounded-md">Planifié</button></td>
+          <td class="py-2 px-4 border border-gray-300">48</td>
+          <td class="py-2 px-4 border border-gray-300">32</td>
+          <td class="py-2 px-4 border border-gray-300">80</td>
+        </tr>
+        <tr class="border-b border-gray-300">
+          <td class="py-2 px-4 border border-gray-300">Python</td>
+          <td class="py-2 px-4 border border-gray-300">Semestre 1</td>
+          <td class="py-2 px-4 border border-gray-300">10 000 F</td>
+          <td class="py-2 px-4 border border-gray-300"><button class="bg-red-200 text-red-600 p-1 rounded-md">Terminé</button></td>
+          <td class="py-2 px-4 border border-gray-300">48</td>
+          <td class="py-2 px-4 border border-gray-300">32</td>
+          <td class="py-2 px-4 border border-gray-300">80</td>
+        </tr>
+        <tr class="border-b border-gray-300">
+          <td class="py-2 px-4 border border-gray-300" rowspan="1">Master 1 Développement Web/Mobile</td>
+          <td class="py-2 px-4 border border-gray-300">ReactJS</td>
+          <td class="py-2 px-4 border border-gray-300">Semestre 2</td>
+          <td class="py-2 px-4 border border-gray-300">30 000 F</td>
+          <td class="py-2 px-4 border border-gray-300"><button class="bg-red-200 text-red-600 p-1 rounded-md">Terminé</button></td>
+          <td class="py-2 px-4 border border-gray-300">48</td>
+          <td class="py-2 px-4 border border-gray-300">32</td>
+          <td class="py-2 px-4 border border-gray-300">80</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

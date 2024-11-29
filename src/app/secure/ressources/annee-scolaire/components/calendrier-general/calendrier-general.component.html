@@ -1,0 +1,60 @@
+<app-annee-scolaire></app-annee-scolaire>
+<div class="bg-gray-50 p-3 rounded-md">
+  <div class="flex mt-1 bg-white shadow-lg p-3">
+      <div class="flex">
+        <select class="p-1 border border-gray-300 rounded-md focus:outline-beige shadow-md w-64">
+          <option>choisir le niveau</option>
+        </select>
+        <select class="p-1 border border-gray-300 rounded-md focus:outline-beige shadow-md ml-2 w-64">
+          <option>choisir le domaine</option>
+        </select>
+        <select class="p-1 border border-gray-300 rounded-md focus:outline-beige shadow-md ml-2 w-64">
+          <option>choisir evenement</option>
+        </select>
+        <button class="bg-[#C9151B] text-white px-3 py-1 rounded-md ml-4">Créer</button>
+      </div>
+  </div>
+
+
+  <div class="overflow-x-auto mt-2">
+      <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+              <tr>
+                  <th class="text-left py-2 px-2 text-red-600">Niveau</th>
+                  <th class="text-left py-2 px-2 text-red-600">Semestre</th>
+                  <th class="text-left py-2 px-2 text-red-600">Evenements</th>
+                  <th class="text-left py-2 px-2 text-red-600">Date de debut</th>
+                  <th class="text-left py-2 px-2 text-red-600">Date de fin</th>
+                  <th class="text-left py-2 px-2 text-red-600">Etat</th>
+                  <th class="text-center py-2 px-2 text-red-600">Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="border-b hover:bg-gray-100 transition duration-150">
+                  <td class="p-2 text-sm">Licence</td>
+                  <td class="p-2 text-sm">Semestre 1</td>
+                  <td class="p-2 text-sm">Ouverture des classes/td>
+                  <td class="p-2 text-sm">15/11/2024</td>
+                  <td class="p-2 text-sm">15/07/2025</td>
+                  <td class="p-2 text-sm">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+                          En cours
+                      </span>
+                  </td>
+                  <td class="p-2 text-center">
+                    <i class="fa-solid fa-ellipsis text-[#C9151B] cursor-pointer"></i>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+  <!-- Pagination -->
+  <app-pagination
+  [totalItems]="10"
+  [itemsPerPageOptions]="[3, 5, 10]"
+  (pageChange)="onPageChange($event)"
+  (itemsPerPageChange)="onItemsPerPageChange($event)">
+</app-pagination>
+</div>

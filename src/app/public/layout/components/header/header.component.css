@@ -1,0 +1,60 @@
+header {
+  position: fixed;
+  top: 0;
+  height: 60px; /* Ajustez selon vos besoins */
+  transition: left 0.3s ease, width 0.3s ease;
+  /* z-index: 10; */
+}
+
+header.expanded {
+  left: 250px; /* Largeur du sidebar ouvert */
+  width: calc(100% - 250px); /* Espace restant */
+}
+
+header.collapsed {
+  left: 62px; /* Largeur du sidebar fermé */
+  width: calc(100% - 63px); /* Espace restant */
+}
+
+/* Drawer styles */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20rem; /* Ajustez selon votre design */
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer.translate-x-full {
+  transform: translateX(100%);
+}
+
+.drawer:not(.translate-x-full) {
+  transform: translateX(0);
+}
+
+/* Drawer content with scroll */
+.drawer-content {
+  height: 100%; /* Prend toute la hauteur du drawer */
+  overflow-y: auto; /* Active le scroll vertical */
+  padding-bottom: 1rem; /* Espace en bas pour le contenu */
+}
+
+/* Styling for the scroll */
+.drawer-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 4px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}

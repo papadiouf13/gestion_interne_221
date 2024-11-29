@@ -1,0 +1,71 @@
+<app-parametre></app-parametre>
+<div class="bg-gray-50 p-3 rounded-md">
+  <div class="flex mt-3 bg-white shadow-lg p-3">
+    <div class="flex items-center space-x-4">
+      <input type="text" placeholder="Libelle documents"
+             class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-beige shadow-md w-64" />
+      <app-select-personnalise [options]="niveaux" placeholder="Choisir le niveau"></app-select-personnalise>
+
+      <div class="bg-white shadow-md p-2 rounded-lg flex items-center space-x-4">
+        <label class="flex items-center">
+          <input type="radio" name="action" class="form-radio h-4 w-4 text-black">
+          <span class="ml-2 text-gray-500">A ramener</span>
+        </label>
+        <label class="flex items-center">
+          <input type="radio" name="action" class="form-radio h-4 w-4 text-black">
+          <span class="ml-2 text-gray-500">A retirer</span>
+        </label>
+      </div>
+
+      <button class="bg-red-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700">
+        Créer
+      </button>
+    </div>
+
+  </div>
+
+
+  <div class="overflow-x-auto mt-2">
+      <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+              <tr>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">Documents</th>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">Niveau</th>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">Type documents</th>
+                  <th class="text-left py-3 px-2 text-red-600 text-sm">État</th>
+                  <th class="text-center py-3 px-2 text-red-600 text-sm">Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="border-b hover:bg-gray-100 transition duration-150">
+                  <td class="p-2 text-sm">Extrait de naissance</td>
+                  <td class="p-2 text-sm">
+                    <button class="bg-green-300 text-white rounded-lg shadow p-1 flex justify-between items-center w-25">
+                      <span>Licence 1</span>
+                      <i class="fas fa-xmark ml-2"></i>
+                    </button>
+                  </td>
+                  <td class="p-2 text-sm">A ramener</td>
+                  <td class="p-2 text-sm">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+                          Disponible
+                      </span>
+                  </td>
+                  <td class="p-2 text-center">
+                      <i class="fa-solid fa-ellipsis text-rouge cursor-pointer"></i>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+  </div>
+
+
+  <!-- Pagination -->
+  <app-pagination
+  [totalItems]="10"
+  [itemsPerPageOptions]="[3, 5, 10]"
+  (pageChange)="onPageChange($event)"
+  (itemsPerPageChange)="onItemsPerPageChange($event)">
+</app-pagination>
+</div>

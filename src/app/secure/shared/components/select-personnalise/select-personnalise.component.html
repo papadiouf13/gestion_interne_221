@@ -1,0 +1,22 @@
+<div class="relative inline-block w-56">
+  <!-- Icône optionnelle, affichée si iconClass est définie -->
+  <i *ngIf="iconClass" [class]="iconClass + ' absolute top-1/2 left-3 transform -translate-y-1/2 pointer-events-none'"></i>
+
+  <!-- Bouton pour afficher la sélection -->
+  <button (click)="toggleDropdown()" class="w-full bg-white border border-gray-300 rounded-md shadow-sm pl-10 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      <span>{{ displayText || placeholder }}</span>
+      <svg class="absolute inset-y-0 right-0 w-6 h-6 text-gray-500 mt-2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5.23 7.21a.75.75 0 011.06-.02L10 10.44l3.71-3.25a.75.75 0 111.04 1.08l-4 3.5a.75.75 0 01-1.04 0l-4-3.5a.75.75 0 01-.02-1.06z" />
+      </svg>
+  </button>
+
+  <!-- Menu déroulant avec cases à cocher -->
+  <ul *ngIf="dropdownVisible" class="absolute z-10 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-2">
+      <li *ngFor="let option of options" class="px-4 py-2 hover:bg-gray-100">
+          <label class="flex items-center space-x-3 cursor-pointer">
+              <input type="checkbox" [(ngModel)]="option.checked" (change)="updateSelection()" class="h-4 w-4 text-red-600 border-gray-300 rounded focus:ring-red-600">
+              <span class="text-sm font-medium text-gray-700">{{ option.label }}</span>
+          </label>
+      </li>
+  </ul>
+</div>

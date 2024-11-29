@@ -1,0 +1,119 @@
+<main class="p-3 transition-all duration-300 bg-gray-100 mt-2">
+    <div class="container mx-auto mt-8">
+        <!-- Header Section -->
+        <div class="flex w-full">
+            <h1 class="text-2xl font-bold text-red-600 mb-6 w-5/6">Gestion Référentiel</h1>
+            <span class="text-gray-400">Gestion referentiel</span>
+        </div>
+
+        <!-- Form Section -->
+        <div class="rounded-lg space-y-4">
+            <div class="grid grid-cols-5 gap-4">
+                <select class="form-select h-9 w-full p-1 border-gray-300 rounded-md shadow-xl">
+                    <option>Domaine</option>
+                </select>
+                <select class="form-select w-full p-1 border-gray-300 rounded-md shadow-xl">
+                    <option>Spécialité</option>
+                </select>
+                <select class="form-select w-full p-1 border-gray-300 rounded-md shadow-xl">
+                    <option>Cycle</option>
+                </select>
+                <select class="form-select w-full p-1 border-gray-300 rounded-md shadow-xl">
+                    <option>Niveau</option>
+                </select>
+                <select class="form-select w-full p-1 border-gray-300 rounded-md shadow-xl">
+                    <option>Semestre</option>
+                </select>
+            </div>
+
+            <div class="flex mt-4 space-x-4">
+                <input type="text" class="form-input w-2/5 p-2 border-gray-300 rounded-md shadow-xl"
+                    placeholder="Nom référentiel">
+                <button class="bg-red-600 text-white font-semibold py-2 px-12 rounded-md"
+                    (click)="createReferentiel()">Créer</button>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="bg-white border-r-4 border-l-2 border-red-600 mt-5 p-4 rounded-lg shadow-md flex space-x-20">
+            <div><span class="font-extrabold">Domaine:</span> <span>Sciences et Technologies</span></div>
+            <div><span class="font-extrabold">Spécialité:</span> <span>Développement Web Mobile</span></div>
+            <div><span class="font-extrabold">Mention:</span> <span>Informatique</span></div>
+            <div><span class="font-extrabold">Grade:</span> <span></span></div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="mt-2 flex space-x-8">
+            <button *ngFor="let semestre of semestres"
+                class="text-gray-700 focus:bg-white font-semibold py-2 px-12 rounded-md">{{ semestre }}</button>
+        </div>
+
+        <!-- Table Section -->
+        <div class="mt-2 rounded-lg">
+            <table class="min-w-full table-auto">
+                <thead class="text-gray-700">
+                    <tr class="bg-white">
+                        <th class="px-4 py-2 border" rowspan="2">Unité d’Enseignement</th>
+                        <th class="px-4 py-2 border" colspan="2">Éléments constitutifs</th>
+                        <th class="px-4 py-2 border" rowspan="2">Crédit</th>
+                        <th class="px-4 py-2 border" rowspan="2">Professeur</th>
+                        <th class="px-4 py-2 border" colspan="3">Nbre d’heures</th>
+                    </tr>
+                    <tr class="bg-white">
+                        <th class="px-4 py-2 border">Module</th>
+                        <th class="px-4 py-2 border">Coef</th>
+                        <th class="px-4 py-2 border">VHP</th>
+                        <th class="px-4 py-2 border">TPE</th>
+                        <th class="px-4 py-2 border">VHT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ue of ues">
+                        <td class="px-4 align-top border" rowspan="1">
+                            <div class="flex items-center justify-center h-full">
+                                <input type="text" class="form-input rounded-md w-2/5" placeholder="UE-1283">
+                                <div class="ml-2 border-l-2 px-1 py-12">
+                                    <textarea placeholder="unite d’Enseignement"></textarea>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2 border">
+                            <select class="form-select w-full rounded-md" (change)="handleModuleChange(ue)">
+                                <option value="">Sélectionner un module</option>
+                                <option>Algorithme</option>
+                                <option>Java</option>
+                                <option>Python</option>
+                            </select>
+                        </td>
+                        <td class="px-4 py-2 border"><input type="number" class="form-input w-full rounded-md"
+                                placeholder="Coef" [disabled]="!ue.enabled"></td>
+                        <td class="px-4 py-2 border"><input type="number" class="form-input w-full rounded-md"
+                                placeholder="Crédit" [disabled]="!ue.enabled"></td>
+                        <td class="px-4 py-2 border">
+                            <select class="form-select w-full border-gray-300 rounded-md" [disabled]="!ue.enabled">
+                                <option>Choisir un professeur</option>
+                                <option>Birane B. Wane</option>
+                                <option>Aly T. Niang</option>
+                            </select>
+                        </td>
+                        <td class="px-4 py-2 border"><input type="number" class="form-input w-full rounded-md"
+                                placeholder="VHP" [disabled]="!ue.enabled"></td>
+                        <td class="px-4 py-2 border"><input type="number" class="form-input w-full rounded-md"
+                                placeholder="TPE" [disabled]="!ue.enabled"></td>
+                        <td class="px-4 py-2 border"><input type="number" class="form-input w-full rounded-md"
+                                placeholder="VHT" [disabled]="!ue.enabled"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Bouton Ajouter UE -->
+        <div class="flex justify-start mt-4">
+            <button class="text-red-600 font-semibold" (click)="ajouterUE()">
+                <svg class="w-5 h-5 border-2 border-red-600 font-extrabold rounded-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</main>

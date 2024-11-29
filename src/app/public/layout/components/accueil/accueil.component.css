@@ -1,0 +1,30 @@
+.Acceuil {
+  font-family: Poppins, sans-serif;
+  background-image: url('/assets/images/BackAccueil.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  /* width: 100%; */
+}
+
+.div1{
+  height: 50%;
+}
+
+.div2{
+  height: 30%;
+  margin-top: 40px;
+}
+
+img{
+  margin-top: 22%;
+  position: absolute;
+}
+
+.button{
+  height: 6em;
+}

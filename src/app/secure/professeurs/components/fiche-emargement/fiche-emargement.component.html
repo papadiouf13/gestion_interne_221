@@ -1,0 +1,74 @@
+<app-professeurs></app-professeurs>
+<div class="overflow-x-auto p-2 bg-white mt-2">
+  <div class="flex items-center space-x-2 mb-4 bg-white p-2 border-b-2">
+    <select class="border border-gray-300 p-2 rounded-md">
+      <option>Filtrer par classe</option>
+    </select>
+    <select class="border border-gray-300 p-2 rounded-md">
+      <option>Filtrer par module</option>
+    </select>
+    <input type="date" class="border border-gray-300 p-2 rounded-md">
+    <input type="date" class="border border-gray-300 p-2 rounded-md">
+    <div class="flex items-center space-x-2">
+      <p class="text-yellow-500">Status Emargement</p>
+      <button class="bg-yellow-200 text-yellow-400 p-1 rounded-md">
+      <i class="fas fa-square-check"></i>
+        En cours
+      </button>
+      <button class="bg-green-200 text-green-400 p-1 rounded-md">
+      <i class="fas fa-square-check"></i>
+        Valider
+      </button>
+      <button class="bg-red-500 text-white p-1 rounded-md">
+      <i class="fas fa-square-check"></i>
+        Annuler
+      </button>
+      <button class="bg-green-500 text-white p-1 rounded-md">
+      <i class="fas fa-check"></i>
+        Payer
+      </button>
+      <button class="bg-gray-300 text-black p-1 rounded-md px-2">
+      <i class="fas fa-square-check"></i>
+      All
+      </button>
+    </div>
+  </div>
+  <table class="min-w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">Code</th>
+        <th class="border px-4 py-2">Modules</th>
+        <th class="border px-4 py-2">Classe</th>
+        <th class="border px-4 py-2">Semestre</th>
+        <th class="border px-4 py-2">Date</th>
+        <th class="border px-4 py-2">Horaires</th>
+        <th class="border px-4 py-2">Type Cours</th>
+        <th class="border px-4 py-2">Status</th>
+        <th class="border px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white">
+        <td class="border px-4 py-2">UE-DB1</td>
+        <td class="border px-4 py-2"><span class="bg-blue-300 text-black px-3 rounded-md">PHP <i class="fas fa-xmark"></i></span></td>
+        <td class="border px-4 py-2"><span class="bg-blue-200 text-black px-3 rounded-md">L1 DEV WEB/MOBILE <i class="fas fa-xmark"></i></span></td>
+        <td class="border px-4 py-2"><span class="bg-blue-200 text-black px-3 rounded-md">Semestre 1 <i class="fas fa-xmark"></i></span></td>
+        <td class="border px-4 py-2">07/10/2024</td>
+        <td class="border px-4 py-2">08:00 - 10:00</td>
+        <td class="border px-4 py-2"><span class="bg-blue-200 text-black p-1 rounded-md"><i class="fa-solid fa-chalkboard-user"></i> Cours en Ligne</span></td>
+        <td class="border px-4 py-2"><span class="bg-green-300 text-black p-2 rounded-md">Valider</span></td>
+        <td class="border px-4 py-2"><button class="p-2 text-rouge text-center"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+    <!-- Pagination -->
+    <app-pagination
+    [totalItems]="10"
+    [itemsPerPageOptions]="[3, 5, 10]"
+    (pageChange)="onPageChange($event)"
+    (itemsPerPageChange)="onItemsPerPageChange($event)">
+  </app-pagination>
+</div>
+

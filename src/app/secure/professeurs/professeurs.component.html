@@ -1,0 +1,98 @@
+<div class="mt-12">
+  <div class="bg-white shadow-md rounded-lg p-2 mb-1">
+    <!-- Informations d'identification -->
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center space-x-6 ml-40">
+        <h2 class="font-bold">NDIAGA LO</h2>
+        <span class="font-semibold">Grade :</span> <span
+          class="text-red-500">Ingénieur informaticien</span>
+        <span class="font-semibold">● Poste :</span> <span
+          class="text-red-500">Chef de service SA</span>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="mr-6">
+          <div class="relative w-32 h-32">
+            <div
+              class="absolute inset-0 rounded-full border-8 border-red-100"></div>
+            <img class="w-28 h-28 rounded-full absolute inset-2 p-1"
+              src="https://via.placeholder.com/150" alt="Profil">
+          </div>
+          <p class="text-center text-sm mt-2 cursor-pointer text-gray-600"><i
+              class="fa-regular fa-pen-to-square"></i> Modifier</p>
+        </div>
+        <div class="card bg-gray-100 p-4 rounded-lg shadow flex-1">
+          <h3 class="text-center text-red-500 font-bold">IDENTIFICATION</h3>
+          <p><span class="font-semibold">MAT :</span> 1058217</p>
+          <p><span class="font-semibold">Nom :</span> LO</p>
+          <p><span class="font-semibold">Prénom :</span> Ndiaga</p>
+        </div>
+        <div class="card bg-gray-100 p-4 rounded-lg shadow flex-1">
+          <h3 class="text-center text-red-500 font-bold">SEXE / NAISSANCE</h3>
+          <p><span class="font-semibold">Sexe :</span> M</p>
+          <p><span class="font-semibold">Date de naissance :</span>
+            11/12/2000</p>
+          <p><span class="font-semibold">Lieu de naissance :</span> Parcelles
+            Assainies</p>
+        </div>
+        <div class="card bg-gray-100 p-4 rounded-lg shadow flex-1">
+          <h3 class="text-center text-red-500 font-bold">CONTACT</h3>
+          <p><span class="font-semibold">Téléphone :</span> +221784559930</p>
+          <p><span class="font-semibold">Email :</span>
+            sohnhero2024-gmail.com</p>
+          <p><span class="font-semibold">Email Pro :</span>
+            ndiagalo250-gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex mt-3 space-x-1 w-full bg-white shadow-lg p-2">
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/ficheEmargement']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/ficheEmargement')}">
+      Fiche d'émargement
+    </button>
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/informations']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/professeurs/informations')}">
+      Informations
+    </button>
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/moduleEnseigne']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/professeurs/moduleEnseigne')}">
+      Modules Enseignés
+    </button>
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/sesClasses']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/professeurs/sesClasses')}">
+      Ses Classes
+    </button>
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/contrats']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/professeurs/contrats')}">
+      Contrats
+    </button>
+    <button
+      class="p-2 bg-gray text-white border-b-4 border-beige text-left rounded-md flex-1"
+      [routerLink]="['/professeurs/sessions']"
+      routerLinkActive="bg-gray-500 text-white border-beige"
+      [ngClass]="{'bg-gray-500 text-white border-beige': isActive('/professeurs/sessions')}">
+      Sessions
+    </button>
+  </div>
+
+  <div class="">
+    <router-outlet></router-outlet>
+  </div>
+</div>

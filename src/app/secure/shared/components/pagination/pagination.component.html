@@ -1,0 +1,39 @@
+<div class="flex justify-between mt-4">
+  <select
+    class="p-1 border border-gray-300 rounded-md"
+    (change)="onItemsPerPageChange($event)">
+    <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+      {{ option }} éléments / page
+    </option>
+  </select>
+  <div class="flex space-x-2">
+    <nav aria-label="Page navigation example">
+      <ul class="inline-flex -space-x-px text-sm">
+        <li>
+          <button
+            (click)="onPreviousPage()"
+            [disabled]="currentPage === 1"
+            class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">
+            &lt;
+          </button>
+        </li>
+        <li *ngFor="let page of totalPagesArray; let i = index">
+          <button
+            (click)="onPageSelect(i + 1)"
+            [ngClass]="{'bg-beige': currentPage === i + 1, 'bg-white': currentPage !== i + 1}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+            {{ i + 1 }}
+          </button>
+        </li>
+        <li>
+          <button
+            (click)="onNextPage()"
+            [disabled]="currentPage === totalPages"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">
+            &gt;
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

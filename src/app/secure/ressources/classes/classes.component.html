@@ -1,0 +1,23 @@
+<app-ressources></app-ressources>
+<div class="flex mt-3">
+  <!-- Classes Tab -->
+  <button
+    class="p-2 w-1/2 text-left rounded-md"
+    [ngClass]="{'bg-rouge text-white border-b-4 border-beige': isActive('/ressources/classes/classe'), 'bg-white text-black border-b-4 border-transparent': !isActive('/ressources/classes/classe')}"
+    routerLink="/ressources/classes/classe">
+    Classes
+  </button>
+
+  <!-- Sous-classes Tab -->
+  <button
+    class="p-2 w-1/2 text-left rounded-md"
+    [ngClass]="{'bg-rouge text-white border-b-4 border-beige': isActive('/ressources/classes/sousClasse'), 'bg-white text-black border-b-4 border-transparent': !isActive('/ressources/classes/sousClasse')}"
+    routerLink="/ressources/classes/sousClasse">
+    Sous-classes
+  </button>
+</div>
+
+<!-- Route outlet -->
+<router-outlet></router-outlet>
+
+

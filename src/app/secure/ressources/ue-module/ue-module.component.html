@@ -1,0 +1,24 @@
+<app-ressources></app-ressources>
+<div class="flex mt-3 space-x-1 w-full shadow-lg p-2">
+  <button class="p-2 text-center bg-white text-black border-b-4 border-beige rounded-md flex-1"
+    [routerLink]="['/ressources/ueModule/typeUe']"
+    routerLinkActive="bg-rouge text-white border-beige"
+    [ngClass]="{'bg-rouge text-white border-beige': isActive('/ressources/ueModule/typeUe'), 'bg-white text-black': !isActive('/ressources/ueModule/typeUe')}"
+  >
+    Type d'UE
+  </button>
+  <button class="p-2 text-center bg-white text-black border-b-4 border-beige rounded-md flex-1"
+    [routerLink]="['/ressources/ueModule/ue']"
+    routerLinkActive="bg-rouge text-white border-beige"
+    [ngClass]="{'bg-rouge text-white border-beige': isActive('/ressources/ueModule/ue'), 'bg-white text-black': !isActive('/ressources/ueModule/ue')}"
+  >
+    U.E (Unité d’enseignement)
+  </button>
+  <button class="p-2 text-center bg-white text-black border-b-4 border-beige rounded-md flex-1"
+    [routerLink]="['/ressources/ueModule/module']"
+    routerLinkActive="bg-rouge text-white border-beige"
+    [ngClass]="{'bg-rouge text-white border-beige': isActive('/ressources/ueModule/module'), 'bg-white text-black': !isActive('/ressources/ueModule/module')}"
+  >
+    Module
+  </button>
+</div>
